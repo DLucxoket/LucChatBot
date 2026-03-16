@@ -3,9 +3,8 @@ package org.dlucxoket.lucatbot.message
 import org.dlucxoket.lucatbot.message.member.MessageMember
 
 /**
- * 私聊消息
+ * 戳一戳消息
  */
-open class PrivateMessage(
-    override val messageMembers: List<MessageMember>
+open class PokeMessage(
 ) : Message {
 }

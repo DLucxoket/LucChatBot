@@ -5,6 +5,7 @@ import org.dlucxoket.lucatbot.message.Message
 /**
  * 消息事件
  */
-interface MessageEvent: Event {
+abstract class MessageEvent(
     val message: Message
+): Event {
 }

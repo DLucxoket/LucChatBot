@@ -1,11 +1,11 @@
 package org.dlucxoket.lucatbot.event
 
-import org.dlucxoket.lucatbot.message.GroupMessage
+import org.dlucxoket.lucatbot.message.Message
 
 /**
  * 群组消息事件
  */
 class GroupMessageEvent(
-    override val message: GroupMessage
-) : MessageEvent {
+    message: Message
+) : MessageEvent(message) {
 }

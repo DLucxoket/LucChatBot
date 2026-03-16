@@ -3,9 +3,9 @@ package org.dlucxoket.lucatbot.message
 import org.dlucxoket.lucatbot.message.member.MessageMember
 
 /**
- * 群组消息
+ * 对话消息
  */
-class GroupMessage(
-    override val messageMembers: List<MessageMember>
+open class ChatMessage(
+    val messageMembers: List<MessageMember>
 ) : Message {
 }
