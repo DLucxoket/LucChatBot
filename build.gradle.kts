@@ -7,7 +7,7 @@ plugins {
 
 group = "org.dlucxoket"
 version = "0.0.1-SNAPSHOT"
-description = "LucChatBot"
+description = "LucatBot"
 
 java {
     toolchain {

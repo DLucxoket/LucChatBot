@@ -1,11 +1,11 @@
-package org.dlucxoket.lucchatbot
+package org.dlucxoket.lucatbot
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class LucChatBotApplication
+class LucatBotApplication
 
 fun main(args: Array<String>) {
-    runApplication<LucChatBotApplication>(*args)
+    runApplication<LucatBotApplication>(*args)
 }
