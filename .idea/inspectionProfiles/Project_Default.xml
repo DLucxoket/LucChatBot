@@ -2,5 +2,32 @@
   <profile version="1.0">
     <option name="myName" value="Project Default" />
     <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="VulnerableLibrariesLocal" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="isIgnoringEnabled" value="true" />
+      <option name="ignoredModules">
+        <list>
+          <option value="LucatBot" />
+          <option value="LucatBot" />
+          <option value="LucatBot" />
+          <option value="LucatBot" />
+        </list>
+      </option>
+      <option name="ignoredPackages">
+        <list>
+          <option value="org.codehaus.plexus:plexus-utils:3.6.0" />
+          <option value="org.springframework:spring-web:7.0.5" />
+          <option value="org.springframework:spring-webmvc:7.0.5" />
+          <option value="org.apache.tomcat.embed:tomcat-embed-core:11.0.18" />
+        </list>
+      </option>
+      <option name="ignoredReasons">
+        <list>
+          <option value="不可利用" />
+          <option value="不可利用" />
+          <option value="不可利用" />
+          <option value="不可利用" />
+        </list>
+      </option>
+    </inspection_tool>
   </profile>
 </component>

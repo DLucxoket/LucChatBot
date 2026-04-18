@@ -1,3 +1,11 @@
 spring:
   application:
     name: LucatBot
+
+shiro:
+  ws:
+    server:
+      enable: true
+    access-token: ZftVV~7_wFah3nCL
+  plugin-list:
+    - org.dlucxoket.lucatbot
