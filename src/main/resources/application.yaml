@@ -8,4 +8,4 @@ shiro:
       enable: true
     access-token: ZftVV~7_wFah3nCL
   plugin-list:
-    - org.dlucxoket.lucatbot
+    - org.dlucxoket.lucatbot.onebot.MainPlugin

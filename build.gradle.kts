@@ -29,6 +29,9 @@ dependencies {
     /** Shiro OneBot 框架：QQ 机器人开发框架 */
     implementation("com.mikuac:shiro:2.5.0")
     
+    /** ClassGraph 类路径扫描库：用于扫描所有 Agent 子类 */
+    implementation("io.github.classgraph:classgraph:4.8.165")
+    
     /** Spring Boot 测试框架：提供 Spring Boot 应用测试支持 */
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     
