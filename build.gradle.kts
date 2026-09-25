@@ -9,11 +9,6 @@ group = "org.dlucxoket"
 version = "0.0.1-SNAPSHOT"
 description = "LucChatBot"
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
 
 repositories {
     mavenCentral()
