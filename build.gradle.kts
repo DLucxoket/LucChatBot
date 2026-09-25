@@ -27,6 +27,10 @@ dependencies {
     /** ClassGraph 类路径扫描库：用于扫描所有 Agent 子类 */
     implementation("io.github.classgraph:classgraph:4.8.165")
     
+    /** LangChain4j OpenAI Starter：支持 OpenAI 协议的 AI 客户端 */
+    implementation("dev.langchain4j:langchain4j-open-ai-spring-boot-starter:0.35.0")
+    implementation("dev.langchain4j:langchain4j:0.35.0")
+    
     /** Spring Boot 测试框架：提供 Spring Boot 应用测试支持 */
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     

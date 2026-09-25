@@ -24,10 +24,10 @@ object DispatcherAgent : Agent() {
      * 根据上下文，决定接下来使用哪个Agent
      *
      * 通过扫描所有可用的 Agent 子类，构建 Agent 列表及其描述，
-     * 然后调用 AI 根据输入上下文智能决策需要调用的 Agent 及其输入参数。
+     * 然后调用 LLM 根据输入上下文智能决策需要调用的 Agent 及其输入参数。
      *
-     * @param input 用户输入的上下文信息，用于 AI 决策
-     * @return AI 返回的决策结果，格式为每行一个 "Agent名称: 输入参数"，若无需调用则返回 "done"
+     * @param input 用户输入的上下文信息，用于 LLM 决策
+     * @return LLM 返回的决策结果，格式为每行一个 "Agent名称: 输入参数"，若无需调用则返回 "done"
      */
     override fun process(input: String): String {
         /**
@@ -62,9 +62,9 @@ object DispatcherAgent : Agent() {
         }
 
         /**
-         * 调用 AI 进行智能决策，传入系统提示、可用 Agent 列表和上下文信息
+         * 调用 LLM 进行智能决策，传入系统提示、可用 Agent 列表和上下文信息
          */
-        val reply = ai.ask("""
+        val reply = llm.ask("""
             $systemPromptHead
             
             可用的Agent以及描述：$sb

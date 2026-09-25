@@ -1,6 +1,6 @@
 package org.dlucxoket.lucatbot.bot.agent
 
-import org.dlucxoket.lucatbot.bot.ai.AI
+import org.dlucxoket.lucatbot.bot.ai.LLM
 
 /**
  * 智能体接口
@@ -8,7 +8,7 @@ import org.dlucxoket.lucatbot.bot.ai.AI
  * 用于进行某种操作，返回某些数据，或判断该不该做
  */
 abstract class Agent {
-    val ai: AI = AI.DEFAULT
+    val llm: LLM = LLM.DEFAULT
     abstract val description: String
     val systemPromptHead: String = """
         你的信息：
