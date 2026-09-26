@@ -11,17 +11,17 @@
 ```
 LucatBotApplication          Spring Boot 入口
 │
-├── onebot/MainPlugin        OneBot 协议接入层（Shiro 插件）
+├── adapter/                 协议适配层
+│   └── onebot/MainPlugin    OneBot 协议接入（Shiro 插件）
 │
-├── bot/Bot                  机器人收发消息抽象（预留扩展）
-│
-├── bot/ai/                  LLM 调用层
-│   ├── LLM                  抽象接口
-│   └── OpenAIAPI            OpenAI 协议实现
-│
-├── bot/agent/               智能体调度层
-│   ├── Agent                智能体抽象基类
-│   └── DispatcherAgent      智能体调度器（单例）
+├── bot/                     机器人核心
+│   ├── Bot                  机器人本体抽象
+│   ├── llm/                 LLM 调用层
+│   │   ├── LLM              抽象接口
+│   │   └── OpenAIAPI        OpenAI 协议实现
+│   └── agent/               智能体调度层
+│       ├── Agent            智能体抽象基类
+│       └── DispatcherAgent  智能体调度器（单例）
 │
 └── model/                   业务数据模型层（与 Shiro DTO 解耦）
     ├── event/               事件模型
@@ -65,9 +65,12 @@ LucatBotApplication          Spring Boot 入口
 
 ---
 
-## 2. onebot — 协议接入层
+## 2. adapter — 协议适配层
 
-### MainPlugin
+> 设计原则：协议相关代码集中在此，与领域核心（bot/、model/）解耦。
+> 将来可扩展 `adapter/wechat/`、`adapter/telegram/` 等。
+
+### adapter/onebot/MainPlugin
 
 | 项目 | 说明 |
 |------|------|
@@ -81,21 +84,21 @@ LucatBotApplication          Spring Boot 入口
 
 ---
 
-## 3. bot — 机器人抽象层
+## 3. bot — 机器人核心
 
 ### Bot（接口）
 
 | 项目 | 说明 |
 |------|------|
-| **类型** | 自定义接口（非 Shiro 的 `com.mikuac.shiro.core.Bot`） |
-| **职责** | 定义机器人收发消息的统一契约 |
+| **类型** | 机器人本体抽象接口 |
+| **职责** | 表示 LucatBot 机器人自身的统一能力入口——接收外界消息、发出回复 |
 | **方法** | `receiveMsg(msg: String)` / `sendMsg(msg: String)` |
-| **设计意图** | 屏蔽底层通信协议差异，预留多协议/多渠道扩展（如接微信、Telegram 等） |
+| **设计意图** | 不关心底层通信协议（QQ / 微信 / Telegram 等），通信与适配由 `adapter/` 层处理 |
 | **当前状态** | 无实现类 |
 
 ---
 
-## 4. bot/ai — LLM 调用层
+## 4. bot/llm — LLM 调用层
 
 ### LLM（接口）
 
@@ -239,7 +242,7 @@ LucatBotApplication          Spring Boot 入口
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                        MainPlugin                            │
+│              adapter/onebot/MainPlugin                       │
 │                   (OneBot 消息入口)                           │
 │                                                              │
 │  onAnyMessage() ──→ 转为 model 层对象 ──→ 交给 Agent 系统     │

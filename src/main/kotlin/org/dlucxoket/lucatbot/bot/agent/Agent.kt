@@ -1,6 +1,6 @@
 package org.dlucxoket.lucatbot.bot.agent
 
-import org.dlucxoket.lucatbot.bot.ai.LLM
+import org.dlucxoket.lucatbot.bot.llm.LLM
 
 /**
  * 智能体（Agent）抽象基类

@@ -1,4 +1,4 @@
-package org.dlucxoket.lucatbot.onebot
+package org.dlucxoket.lucatbot.adapter.onebot
 
 import com.mikuac.shiro.core.Bot
 import com.mikuac.shiro.core.BotPlugin

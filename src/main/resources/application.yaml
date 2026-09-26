@@ -8,7 +8,7 @@ shiro:
       enable: true
     access-token: ZftVV~7_wFah3nCL
   plugin-list:
-    - org.dlucxoket.lucatbot.onebot.MainPlugin
+    - org.dlucxoket.lucatbot.adapter.onebot.MainPlugin
 
 # LLM 配置 - 本地 Qwen
 ai:

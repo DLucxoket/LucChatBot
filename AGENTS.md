@@ -32,7 +32,7 @@ Session：空占位符
 
 ### 入口点
 
-`MainPlugin`（Shiro BotPlugin）——目前是骨架；`onAnyMessage` 返回 `MESSAGE_IGNORE`。机器人自动通过好友请求。
+`adapter/onebot/MainPlugin`（Shiro BotPlugin）——目前是骨架；`onAnyMessage` 返回 `MESSAGE_IGNORE`。机器人自动通过好友请求。
 
 ### LLM 配置
 

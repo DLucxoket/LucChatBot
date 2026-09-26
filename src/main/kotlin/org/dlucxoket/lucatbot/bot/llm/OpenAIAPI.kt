@@ -1,4 +1,4 @@
-package org.dlucxoket.lucatbot.bot.ai
+package org.dlucxoket.lucatbot.bot.llm
 
 import dev.langchain4j.data.message.SystemMessage
 import dev.langchain4j.data.message.UserMessage

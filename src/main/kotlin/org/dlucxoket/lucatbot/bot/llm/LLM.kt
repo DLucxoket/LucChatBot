@@ -1,4 +1,4 @@
-package org.dlucxoket.lucatbot.bot.ai
+package org.dlucxoket.lucatbot.bot.llm
 
 
 /**
